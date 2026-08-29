@@ -4,72 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team IT HSM</title>
+    <link rel="stylesheet" href="style.css">
 
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid purple;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: palevioletred;
-}
-</style>
 
 </head>
+
+
 <body>
 
-    <H1>Web Portal New Team IT HSM</H1>
+   <div class="container">
+    <img src="images/teamithsm_logo.png" class="logo" alt="">
+
+    <div class="content">
+        <p>WebPortal TeamIT Hospital Seri Manjung Sedang Selenggara.</p>
+
+        <h1><span>Pra Peluncuran</span> tidak lama lagi</h1>
+        <div class="launch-time">
+            <div>
+                <p id="hari">00</p>
+                <span>Hari</span>
+            </div>
+            <div>
+                <p id="jam">00</p>
+                <span>Jam</span>
+            </div>
+            <div>
+                <p id="minit">00</p>
+                <span>Minit</span>
+            </div>
+            <div>
+                <p id="saat">00</p>
+                <span>Saat</span>
+            </div>
+        </div>
+
+        <button type="button">Seterusnya <img src="images/triangle.png"></button>
+    </div>
+
+    <img src="images/rocket.png" class="rocket" >
+   </div>
 
 
 
-    <table>
-        <tr>
-            <th>No.</th>
-            <th>Nama</th>
-        </tr>
+   <script>
+    var countDownDate = new Date("December 1, 2026 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
 
-        <tr>
-            <td>1.</td>
-            <td>PUAN ROSHALIZA BINTI BUANG</td>
-        </tr>
-        <tr>
-            <td>2.</td>
-            <td>PUAN JAIGESWARI A/P CHELLAMUTHU</td>
-        </tr>
-        <tr>
-            <td>3.</td>
-            <td>PUAN NURHANIM BINTI NOR RAHIM</td>
-        </tr>
-        <tr>
-            <td>4.</td>
-            <td>ENCIK MOHD NUR BIN IDRIAS</td>
-        </tr>
-        <tr>
-            <td>5.</td>
-            <td>ENCIK MOHAMAD KHAIRUL AZHAR BIN KAMAL</td>
-        </tr>
-        <tr>
-            <td>6.</td>
-            <td>ENCIK MUHAMAD SAHIR SYAHMI BIN MUHAMAD RADZI</td>
-        </tr>
-        <tr>
-            <td>7.</td>
-            <td>PUAN NOOR ILYANI BINTI IBARAHIM</td>
-        </tr>
-        <tr>
-            <td>8.</td>
-            <td>ENCIK MOHAMAD FADZIL BIN MUSTAFFA</td>
-        </tr>
+        var hari = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var jam = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minit = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var saat = Math.floor((distance % (1000 * 60)) / 1000);
 
-    </table>
+        document.getElementById("hari").innerHTML = hari;
+        document.getElementById("jam").innerHTML = jam;
+        document.getElementById("minit").innerHTML = minit;
+        document.getElementById("saat").innerHTML = saat;
+
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById("hari").innerHTML = "00";
+            document.getElementById("jam").innerHTML = "00";
+            document.getElementById("minit").innerHTML = "00";
+            document.getElementById("saat").innerHTML = "00";
+        }
+
+    },1000);
+
+   </script>
+
+   
     
 </body>
 </html>
